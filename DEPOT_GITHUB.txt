@@ -1,0 +1,11 @@
+PAUL AI — BASE DE DÉPÔT GITHUB
+
+Les fichiers du projet (app/, .github/, build.gradle.kts, settings.gradle.kts, gradle.properties, README.md) sont directement à la racine pour faciliter le dépôt GitHub.
+
+Archives incluses :
+- PAUL_AI_SOURCE.zip : archive source incluse dans le pack initial.
+- PAUL_AI_ANDROID_STARTER.zip : pack de départ Android.
+
+IMPORTANT : les archives ZIP incluses sont des copies de sauvegarde. Pour la compilation GitHub Actions, les fichiers du projet doivent rester à la racine du dépôt, pas seulement dans les ZIP.
+
+État : compilation réelle non encore validée. Vérifier le workflow et corriger les erreurs éventuelles avant de considérer l’APK comme prêt.
