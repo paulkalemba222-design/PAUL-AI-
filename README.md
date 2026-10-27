@@ -1,26 +1,15 @@
-# PAUL AI Android — pack source v0.2
+# PAUL AI — Android
 
-Ce dépôt contient le projet source Android de PAUL AI et le workflow GitHub Actions pour générer un APK debug.
+Application Android native (Kotlin + WebView) pour discuter avec PAUL AI via Supabase Edge Function `paul-ai`.
 
-## Fonctionnalités du prototype
-- Interface de discussion
-- Saisie vocale via le service de reconnaissance vocale Android
-- Sélection de fichiers
-- Connexion préparée au backend Supabase Edge Function `paul-ai`
-- Compilation APK automatique via GitHub Actions
+## Configuration
+Dans `app/src/main/assets/config.js`, remplace `SUPABASE_ANON_KEY` par la clé publique (anon/publishable) de ton projet Supabase. Ne mets jamais `OPENROUTER_API_KEY` dans l'application.
 
-## Limites à connaître
-- Ceci est le code source, pas un APK déjà compilé ni testé sur appareil.
-- Le backend `paul-ai` configuré actuellement peut exiger un jeton Supabase (verify_jwt=true). Cette version n'inclut pas encore l'écran de connexion Supabase ; une erreur 401 signifie que l'authentification doit être ajoutée.
-- Les fichiers texte TXT/MD/CSV/JSON peuvent être ajoutés au prompt. Les PDF et images ne sont pas encore analysés.
-- La clé publique Supabase est une clé client, pas un secret. Ne jamais placer une clé OpenRouter, `service_role` ou autre secret dans l'application Android.
-- La reconnaissance vocale dépend des services installés sur l'appareil et peut utiliser une connexion Internet.
+Le backend exige actuellement un JWT. Cette première version inclut connexion e-mail/mot de passe et chat texte. Téléphone/SIM, voix et fichiers restent à développer.
 
-## Compilation gratuite
-1. Crée un dépôt GitHub nommé `PAUL-AI`.
-2. Envoie le contenu du dossier du projet à la racine du dépôt (ne dépose pas uniquement le ZIP imbriqué).
-3. Ouvre l'onglet **Actions**.
-4. Choisis **Build PAUL AI APK**, puis **Run workflow**. Le workflow peut aussi démarrer après un push sur `main`.
-5. À la fin, ouvre l'exécution réussie et télécharge l'artefact `PAUL-AI-debug-APK`.
+## Générer l'APK gratuitement
+1. Crée un dépôt GitHub et téléverse le contenu du ZIP.
+2. Ouvre Actions et lance `Build PAUL AI APK`.
+3. Télécharge `PAUL-AI-debug.apk` depuis les artefacts du workflow terminé.
 
-L'APK produit est une version debug destinée aux tests, pas une version signée pour publication. Le projet doit encore être compilé et testé avant de confirmer qu'il fonctionne correctement.
+Le ZIP contient le projet source, pas un APK déjà compilé ou testé sur téléphone.
